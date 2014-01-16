@@ -24,9 +24,9 @@ double RK_increment(double (*func)(double,double), double &t, double delta){
 }
 
 int main(){ 
-  double t = 1;
-  double x = 1;
-  double deriv_x = 0;
+  double t = 0;
+  double x = 0;
+  double deriv_x = 1;
   for(int i=0;i<100000;i++){
     cout << t << " " << x << endl;
     deriv_x += RK_increment(f_x,t,x);
