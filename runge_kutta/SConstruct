@@ -1,0 +1,6 @@
+# -*- python -*-
+
+import os
+
+env = Environment(ENV=os.environ)
+env.Program(['main.cc','RungeKutta.cc'])
