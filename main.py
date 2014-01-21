@@ -18,21 +18,13 @@ def coulomb_henkel_h1_deriv_asym(l,rho,k):
     return k*(1j)**(-l+1)*np.exp(1j*rho)
 def coulomb_henkel_h2_deriv_asym(l,rho,k):
     return -k*(1j)**(l+1)*np.exp(-1j*rho)
-def coulomb_henkel_h1_asym(l,rho):
-    return np.exp(1j*(rho-l*np.pi/2))
-def coulomb_henkel_h2_asym(l,rho):
-    return np.exp(-1j*(rho-l*np.pi/2))
-def coulomb_henkel_h1_deriv_asym(l,rho,k):
-    return k*1j*np.exp(1j*(rho-l*np.pi/2))
-def coulomb_henkel_h2_deriv_asym(l,rho,k):
-    return k*(-1j)*np.exp(-1j*(rho-l*np.pi/2))
 
 class single_channel():
     def __init__(self):
         self.E=1.0
         self.l=0
     def func(self,state, t):
-        V=-61.1/(1.0+np.exp((t-1.2*np.power(11,1.0/3.0))/0.65))
+        V=-61.1/(1.0+np.exp((t-1.2*np.power(10,1.0/3.0))/0.65))
         x, xdot = state
         return [xdot, (self.l*(self.l+1)/(t*t)+0.0478450*(V-self.E))*x]
     def return_k(self):
